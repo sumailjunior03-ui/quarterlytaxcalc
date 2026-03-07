@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quarterly Tax Calculator | QuarterlyTaxCalc.com</title>
+  <meta name="description" content="Estimate your 2025 US federal quarterly estimated tax payments. Covers self-employment (SE) tax, 50% SE deduction, and federal income tax brackets. Federal only, no state taxes." />
+  <meta name="google-adsense-account" content="ca-pub-7744853829365165" />
+  <link rel="canonical" href="https://quarterlytaxcalc.com/" />
+  <link rel="stylesheet" href="styles.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7744853829365165" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Quarterly Tax Calculator",
+    "url": "https://quarterlytaxcalc.com/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "description": "Estimate your 2025 US federal quarterly estimated tax payments. Covers self-employment tax, 50% SE deduction, and federal income tax brackets."
+  }
+  </script>
+</head>
+<body class="page-wrap">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">Quarterly<span>Tax</span>Calc</a>
+      <span class="site-tagline">Federal Only · 2025 Brackets · 1099 / Self-Employed</span>
+    </div>
+  </header>
+
+  <!-- TOP AD SLOT (collapsed by default) -->
+  <div class="container">
+    <div id="ad-slot-top" class="ad-slot ad-slot-top is-off" aria-hidden="true"></div>
+    <div id="sponsor-bar" class="sponsor-bar is-off" aria-hidden="true">
+      <span>Sponsored: </span><a href="#" rel="noopener sponsored"></a>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="tool-hero">
+      <div class="container">
+        <h1>US Federal Quarterly Tax Calculator</h1>
+        <p>Estimate your 2025 federal quarterly estimated tax payments. Built for freelancers, consultants, and anyone with self-employment (1099) income.</p>
+        <div class="badge-row">
+          <span class="badge">2025 Federal Brackets</span>
+          <span class="badge">SE Tax + 50% Deduction</span>
+          <span class="badge">Standard Deduction Only</span>
+          <span class="badge">Federal Only — No State</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+
+      <!-- FORM CARD -->
+      <div class="calc-card">
+        <h2>Enter Your Income Details</h2>
+        <form id="tax-form" novalidate>
+
+          <p class="form-section-label">Required</p>
+
+          <div class="form-grid">
+            <div class="field full-width">
+              <label for="net-profit">Net Self-Employment Profit (Schedule C) <span class="req">*</span></label>
+              <div class="input-prefix">
+                <input type="text" id="net-profit" class="dollar-input" inputmode="decimal" placeholder="e.g. 80,000" autocomplete="off" />
+              </div>
+              <span class="field-hint">Your gross 1099 / freelance income minus business expenses.</span>
+              <span class="field-error" id="net-profit-error" role="alert"></span>
+            </div>
+
+            <div class="field full-width">
+              <label for="filing-status">Filing Status <span class="req">*</span></label>
+              <select id="filing-status">
+                <option value="">— Select —</option>
+                <option value="single">Single</option>
+                <option value="mfj">Married Filing Jointly</option>
+                <option value="hoh">Head of Household</option>
+              </select>
+              <span class="field-error" id="filing-status-error" role="alert"></span>
+            </div>
+          </div>
+
+          <p class="form-section-label">Optional — default 0 if blank</p>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="w2-wages">Other W-2 Wages <span class="opt">(optional)</span></label>
+              <div class="input-prefix">
+                <input type="text" id="w2-wages" class="dollar-input" inputmode="decimal" placeholder="0" autocomplete="off" />
+              </div>
+              <span class="field-hint">W-2 income from an employer this year.</span>
+              <span class="field-error" id="w2-wages-error" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label for="withholding">Federal Withholding Expected <span class="opt">(optional)</span></label>
+              <div class="input-prefix">
+                <input type="text" id="withholding" class="dollar-input" inputmode="decimal" placeholder="0" autocomplete="off" />
+              </div>
+              <span class="field-hint">Total federal tax already withheld (W-2 box 2).</span>
+              <span class="field-error" id="withholding-error" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label for="retirement">Traditional 401(k) / IRA Contributions <span class="opt">(optional)</span></label>
+              <div class="input-prefix">
+                <input type="text" id="retirement" class="dollar-input" inputmode="decimal" placeholder="0" autocomplete="off" />
+              </div>
+              <span class="field-hint">Pre-tax retirement contributions that reduce AGI.</span>
+              <span class="field-error" id="retirement-error" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label for="hsa">HSA Contributions <span class="opt">(optional)</span></label>
+              <div class="input-prefix">
+                <input type="text" id="hsa" class="dollar-input" inputmode="decimal" placeholder="0" autocomplete="off" />
+              </div>
+              <span class="field-hint">Health Savings Account contributions above payroll.</span>
+              <span class="field-error" id="hsa-error" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <button type="submit" class="btn-primary">Calculate Quarterly Taxes →</button>
+            <button type="button" id="reset-btn" class="btn-secondary">Reset</button>
+          </div>
+
+        </form>
+      </div><!-- /.calc-card -->
+
+      <!-- RESULTS -->
+      <section id="results" class="is-off" aria-live="polite">
+        <h2 class="results-title">Your 2025 Federal Tax Estimate</h2>
+
+        <!-- Summary cards -->
+        <div class="summary-grid">
+          <div class="summary-card">
+            <div class="card-label">Income Tax</div>
+            <div class="card-value" id="out-income-tax">—</div>
+          </div>
+          <div class="summary-card">
+            <div class="card-label">SE Tax</div>
+            <div class="card-value" id="out-se-tax">—</div>
+          </div>
+          <div class="summary-card">
+            <div class="card-label">Total Federal Tax</div>
+            <div class="card-value" id="out-total-tax">—</div>
+          </div>
+          <div class="summary-card">
+            <div class="card-label">Withholding</div>
+            <div class="card-value" id="out-withholding">—</div>
+          </div>
+          <div class="summary-card highlight">
+            <div class="card-label">Est. Amount Due</div>
+            <div class="card-value" id="out-amount-due">—</div>
+          </div>
+          <div class="summary-card highlight">
+            <div class="card-label">Per Quarter</div>
+            <div class="card-value" id="out-quarterly">—</div>
+          </div>
+        </div>
+
+        <!-- Calculation details accordion -->
+        <div class="details-block">
+          <button class="details-toggle" aria-expanded="false" onclick="
+            this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true' ? 'false' : 'true');
+            this.nextElementSibling.style.display = this.getAttribute('aria-expanded')==='true' ? 'block' : 'none';
+          ">
+            Show Calculation Breakdown <span class="toggle-icon">▼</span>
+          </button>
+          <div class="details-body" style="display:none;">
+            <div class="detail-row"><span class="d-label">SE base (net profit × 0.9235)</span><span class="d-value" id="out-se-base">—</span></div>
+            <div class="detail-row"><span class="d-label">Social Security tax</span><span class="d-value" id="out-ss-tax">—</span></div>
+            <div class="detail-row"><span class="d-label">Medicare tax</span><span class="d-value" id="out-medicare-tax">—</span></div>
+            <div class="detail-row"><span class="d-label">SE tax deduction (50% of SE tax)</span><span class="d-value" id="out-se-deduction">—</span></div>
+            <div class="detail-row"><span class="d-label">Adjusted Gross Income (AGI est.)</span><span class="d-value" id="out-agi">—</span></div>
+            <div class="detail-row"><span class="d-label">Standard deduction</span><span class="d-value" id="out-std-ded">—</span></div>
+            <div class="detail-row"><span class="d-label">Taxable income</span><span class="d-value" id="out-taxable-income">—</span></div>
+          </div>
+        </div>
+
+        <!-- Quarterly payment table -->
+        <div class="quarterly-table-wrap">
+          <h3>Quarterly Payment Schedule</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Quarter</th>
+                <th>Due Date</th>
+                <th style="text-align:right">Payment</th>
+              </tr>
+            </thead>
+            <tbody id="quarterly-tbody">
+            </tbody>
+          </table>
+          <p class="dates-note">Dates can vary by year. Verify at irs.gov.</p>
+        </div>
+
+        <!-- Includes / Excludes -->
+        <div class="scope-box">
+          <div class="inc">
+            <h4>Includes</h4>
+            <ul>
+              <li>2025 federal income tax brackets</li>
+              <li>Standard deduction</li>
+              <li>Self-employment (SE) tax</li>
+              <li>50% SE tax deduction</li>
+              <li>401(k) / IRA / HSA above-the-line deductions</li>
+            </ul>
+          </div>
+          <div class="exc">
+            <h4>Excludes</h4>
+            <ul>
+              <li>State taxes</li>
+              <li>Tax credits of any kind</li>
+              <li>Itemized deductions</li>
+              <li>Alternative Minimum Tax (AMT)</li>
+              <li>Additional Medicare Tax (0.9%)</li>
+              <li>Special situations / phase-outs</li>
+            </ul>
+          </div>
+        </div>
+
+        <section class="info-section">
+          <h2>What This Calculator Does</h2>
+          <p>This calculator estimates your 2025 US federal quarterly tax payments using your net self-employment profit, filing status, optional W-2 wages, expected federal withholding, and optional above-the-line retirement and HSA deductions. It combines estimated federal income tax with self-employment tax, subtracts expected withholding, and divides the remaining estimated amount due into four equal quarterly payments.</p>
+        </section>
+
+        <section class="info-section">
+          <h2>Calculation Methodology</h2>
+          <p>The calculator first estimates self-employment tax by multiplying net profit by 0.9235 to get the SE tax base, then applying 12.4% Social Security tax up to the annual wage base and 2.9% Medicare tax on the remaining SE base. It then calculates the deductible half of SE tax, subtracts that deduction along with optional retirement and HSA contributions from total income to estimate adjusted gross income, applies the standard deduction for the selected filing status, estimates 2025 federal income tax from the remaining taxable income using federal brackets, adds income tax and SE tax together, subtracts expected federal withholding, and divides the remaining estimated amount due by four to show equal quarterly payment estimates.</p>
+        </section>
+
+        <!-- Disclaimer -->
+        <p class="disclaimer">Estimates only. This tool does not constitute tax advice. Verify all figures with official IRS sources or a qualified tax professional before making payments.</p>
+
+        <!-- BOTTOM AD SLOT (collapsed by default) -->
+        <div id="ad-slot-bottom" class="ad-slot ad-slot-bottom is-off" aria-hidden="true"></div>
+
+      </section><!-- /#results -->
+
+    </div><!-- /.container -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>QuarterlyTaxCalc</h4>
+          <p>Free federal quarterly tax estimator for 1099 / self-employed workers. 2025 brackets. No data collected.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <a href="/faq.html">FAQ</a>
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/legal.html">Legal</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Related Tools</h4>
+          <div class="network-links related-tools"></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> QuarterlyTaxCalc.com — For informational use only.</span>
+        <span>Partnerships: <a href="mailto:partnerships@calc-hq.com" class="partnerships-link">partnerships@calc-hq.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="config.js"></script>
+  <script src="network.js"></script>
+  <script src="app.js"></script>
+  <script src="ads.js"></script>
+</body>
+</html>
