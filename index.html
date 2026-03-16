@@ -1,288 +1,206 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quarterly Tax Calculator | QuarterlyTaxCalc.com</title>
-  <meta name="description" content="Estimate your 2025 US federal quarterly estimated tax payments. Covers self-employment (SE) tax, 50% SE deduction, and federal income tax brackets. Federal only, no state taxes." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://quarterlytaxcalc.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Quarterly Tax Calculator | QuarterlyTaxCalc.com" />
-  <meta property="og:description" content="Estimate your 2025 US federal quarterly estimated tax payments. Covers self-employment (SE) tax, 50% SE deduction, and federal income tax brackets. Federal only, no state taxes." />
-  <meta property="og:url" content="https://quarterlytaxcalc.com/" />
-  <meta name="google-adsense-account" content="ca-pub-7744853829365165" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quarterly Tax Estimator | QuarterlyTaxCalc.com</title>
+  <meta name="description" content="Estimate quarterly federal tax payments for self-employed or other untaxed income using 2025 federal brackets and self-employment tax.">
+  <link rel="canonical" href="https://quarterlytaxcalc.com/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Quarterly Tax Estimator | QuarterlyTaxCalc.com">
+  <meta property="og:description" content="Estimate quarterly federal tax payments for self-employed or other untaxed income using 2025 federal brackets and self-employment tax.">
+  <meta property="og:url" content="https://quarterlytaxcalc.com/">
+  <meta name="google-adsense-account" content="ca-pub-7744853829365165">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7744853829365165" crossorigin="anonymous"></script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Quarterly Tax Calculator",
-    "url": "https://quarterlytaxcalc.com/",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "All",
-    "description": "Estimate your 2025 US federal quarterly estimated tax payments. Covers self-employment tax, 50% SE deduction, and federal income tax brackets."
+  <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Quarterly Tax Estimator",
+  "url": "https://quarterlytaxcalc.com/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Estimate quarterly federal tax payments for self-employed or other untaxed income using 2025 federal brackets and self-employment tax.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
   }
-  </script>
+}
+</script>
 </head>
-<body class="page-wrap">
-
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container">
-      <a href="/" class="site-logo">Quarterly<span>Tax</span>Calc</a>
-      <span class="site-tagline">Federal Only · 2025 Brackets · 1099 / Self-Employed</span>
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">QuarterlyTaxCalc.com</a>
+      <div data-site-header-nav></div>
     </div>
   </header>
-
-  <!-- TOP AD SLOT (collapsed by default) -->
-  <div class="container">
-    <div id="ad-slot-top" class="ad-slot ad-slot-top is-off" aria-hidden="true"></div>
-    <div id="sponsor-bar" class="sponsor-bar is-off" aria-hidden="true">
-      <span>Sponsored: </span><a href="#" rel="noopener sponsored"></a>
-    </div>
-  </div>
-
-  <main>
-    <!-- HERO -->
-    <section class="tool-hero">
-      <div class="container">
-        <h1>US Federal Quarterly Tax Calculator</h1>
-        <p>Estimate your 2025 federal quarterly estimated tax payments. Built for freelancers, consultants, and anyone with self-employment (1099) income.</p>
-        <div class="badge-row">
-          <span class="badge">2025 Federal Brackets</span>
-          <span class="badge">SE Tax + 50% Deduction</span>
-          <span class="badge">Standard Deduction Only</span>
-          <span class="badge">Federal Only — No State</span>
+<main class="container">
+    <section class="hero">
+      <div class="breadcrumbs">Home / Calculator</div>
+      <div class="hero-grid">
+        <div class="card">
+          <h1>Quarterly Tax Calculator</h1>
+          <p class="muted">Estimate federal quarterly tax payments using projected annual self-employment income and expenses. Results run locally in your browser.</p>
+          <ins class="adsbygoogle ad-slot" data-ad-client="" data-ad-slot="" data-ad-format="auto" data-full-width-responsive="true" aria-label="Advertisement"></ins>
+        </div>
+        <div class="card">
+          <h2>Calculator Tool</h2>
+          <form id="calculatorForm">
+            <div>
+              <label for="annualIncome">Expected annual self-employment income (USD)</label>
+              <input id="annualIncome" name="annualIncome" type="number" min="0" step="100" value="80000">
+            </div>
+            <div>
+              <label for="annualExpenses">Expected annual business expenses (USD)</label>
+              <input id="annualExpenses" name="annualExpenses" type="number" min="0" step="100" value="20000">
+            </div>
+            <div>
+              <label for="filingStatus">Filing status</label>
+              <select id="filingStatus" name="filingStatus">
+                <option value="single">Single</option>
+                <option value="married">Married filing jointly</option>
+                <option value="hoh">Head of household</option>
+              </select>
+            </div>
+            <button type="submit">Calculate quarterly tax</button>
+          </form>
         </div>
       </div>
     </section>
 
-    <div class="container">
-
-      <!-- FORM CARD -->
-      <div class="calc-card">
-        <h2>Enter Your Income Details</h2>
-        <form id="tax-form" novalidate>
-
-          <p class="form-section-label">Required</p>
-
-          <div class="form-grid">
-            <div class="field full-width">
-              <label for="net-profit">Net Self-Employment Profit (Schedule C) <span class="req">*</span></label>
-              <div class="input-prefix">
-                <input type="text" id="net-profit" class="dollar-input" inputmode="decimal" placeholder="e.g. 80,000" autocomplete="off" />
-              </div>
-              <span class="field-hint">Your gross 1099 / freelance income minus business expenses.</span>
-              <span class="field-error" id="net-profit-error" role="alert"></span>
-            </div>
-
-            <div class="field full-width">
-              <label for="filing-status">Filing Status <span class="req">*</span></label>
-              <select id="filing-status">
-                <option value="">— Select —</option>
-                <option value="single">Single</option>
-                <option value="mfj">Married Filing Jointly</option>
-                <option value="hoh">Head of Household</option>
-              </select>
-              <span class="field-error" id="filing-status-error" role="alert"></span>
-            </div>
-          </div>
-
-          <p class="form-section-label">Optional — default 0 if blank</p>
-
-          <div class="form-grid">
-            <div class="field">
-              <label for="w2-wages">Other W-2 Wages <span class="opt">(optional)</span></label>
-              <div class="input-prefix">
-                <input type="text" id="w2-wages" class="dollar-input" inputmode="decimal" placeholder="0" autocomplete="off" />
-              </div>
-              <span class="field-hint">W-2 income from an employer this year.</span>
-              <span class="field-error" id="w2-wages-error" role="alert"></span>
-            </div>
-
-            <div class="field">
-              <label for="withholding">Federal Withholding Expected <span class="opt">(optional)</span></label>
-              <div class="input-prefix">
-                <input type="text" id="withholding" class="dollar-input" inputmode="decimal" placeholder="0" autocomplete="off" />
-              </div>
-              <span class="field-hint">Total federal tax already withheld (W-2 box 2).</span>
-              <span class="field-error" id="withholding-error" role="alert"></span>
-            </div>
-
-            <div class="field">
-              <label for="retirement">Traditional 401(k) / IRA Contributions <span class="opt">(optional)</span></label>
-              <div class="input-prefix">
-                <input type="text" id="retirement" class="dollar-input" inputmode="decimal" placeholder="0" autocomplete="off" />
-              </div>
-              <span class="field-hint">Pre-tax retirement contributions that reduce AGI.</span>
-              <span class="field-error" id="retirement-error" role="alert"></span>
-            </div>
-
-            <div class="field">
-              <label for="hsa">HSA Contributions <span class="opt">(optional)</span></label>
-              <div class="input-prefix">
-                <input type="text" id="hsa" class="dollar-input" inputmode="decimal" placeholder="0" autocomplete="off" />
-              </div>
-              <span class="field-hint">Health Savings Account contributions above payroll.</span>
-              <span class="field-error" id="hsa-error" role="alert"></span>
-            </div>
-          </div>
-
-          <div class="btn-row">
-            <button type="submit" class="btn-primary">Calculate Quarterly Taxes →</button>
-            <button type="button" id="reset-btn" class="btn-secondary">Reset</button>
-          </div>
-
-        </form>
-      </div><!-- /.calc-card -->
-
-      <!-- RESULTS -->
-      <section id="results" class="is-off" aria-live="polite">
-        <h2 class="results-title">Your 2025 Federal Tax Estimate</h2>
-
-        <!-- Summary cards -->
-        <div class="summary-grid">
-          <div class="summary-card">
-            <div class="card-label">Income Tax</div>
-            <div class="card-value" id="out-income-tax">—</div>
-          </div>
-          <div class="summary-card">
-            <div class="card-label">SE Tax</div>
-            <div class="card-value" id="out-se-tax">—</div>
-          </div>
-          <div class="summary-card">
-            <div class="card-label">Total Federal Tax</div>
-            <div class="card-value" id="out-total-tax">—</div>
-          </div>
-          <div class="summary-card">
-            <div class="card-label">Withholding</div>
-            <div class="card-value" id="out-withholding">—</div>
-          </div>
-          <div class="summary-card highlight">
-            <div class="card-label">Est. Amount Due</div>
-            <div class="card-value" id="out-amount-due">—</div>
-          </div>
-          <div class="summary-card highlight">
-            <div class="card-label">Per Quarter</div>
-            <div class="card-value" id="out-quarterly">—</div>
-          </div>
+    <section>
+      <div class="section-card">
+        <h2>Estimated Results</h2>
+        <div class="results-grid">
+          <div class="result-box"><span class="result-label">Projected annual profit</span><span id="projectedProfit" class="result-value">$0.00</span></div>
+          <div class="result-box"><span class="result-label">Estimated self-employment tax</span><span id="estimatedSeTax" class="result-value">$0.00</span></div>
+          <div class="result-box"><span class="result-label">Estimated federal income tax</span><span id="estimatedFederalTax" class="result-value">$0.00</span></div>
+          <div class="result-box"><span class="result-label">Estimated total annual tax</span><span id="estimatedAnnualTax" class="result-value">$0.00</span></div>
+          <div class="result-box"><span class="result-label">Estimated quarterly payment</span><span id="estimatedQuarterlyTax" class="result-value highlight">$0.00</span></div>
         </div>
+        <p class="notice">This is an estimate for planning only. It does not include state taxes, credits, withholding adjustments, or safe-harbor planning nuances.</p>
+      </div>
+    </section>
 
-        <!-- Calculation details accordion -->
-        <div class="details-block">
-          <button class="details-toggle" aria-expanded="false" onclick="
-            this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true' ? 'false' : 'true');
-            this.nextElementSibling.style.display = this.getAttribute('aria-expanded')==='true' ? 'block' : 'none';
-          ">
-            Show Calculation Breakdown <span class="toggle-icon">▼</span>
-          </button>
-          <div class="details-body" style="display:none;">
-            <div class="detail-row"><span class="d-label">SE base (net profit × 0.9235)</span><span class="d-value" id="out-se-base">—</span></div>
-            <div class="detail-row"><span class="d-label">Social Security tax</span><span class="d-value" id="out-ss-tax">—</span></div>
-            <div class="detail-row"><span class="d-label">Medicare tax</span><span class="d-value" id="out-medicare-tax">—</span></div>
-            <div class="detail-row"><span class="d-label">SE tax deduction (50% of SE tax)</span><span class="d-value" id="out-se-deduction">—</span></div>
-            <div class="detail-row"><span class="d-label">Adjusted Gross Income (AGI est.)</span><span class="d-value" id="out-agi">—</span></div>
-            <div class="detail-row"><span class="d-label">Standard deduction</span><span class="d-value" id="out-std-ded">—</span></div>
-            <div class="detail-row"><span class="d-label">Taxable income</span><span class="d-value" id="out-taxable-income">—</span></div>
-          </div>
-        </div>
 
-        <!-- Quarterly payment table -->
-        <div class="quarterly-table-wrap">
-          <h3>Quarterly Payment Schedule</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Quarter</th>
-                <th>Due Date</th>
-                <th style="text-align:right">Payment</th>
-              </tr>
-            </thead>
-            <tbody id="quarterly-tbody">
-            </tbody>
-          </table>
-          <p class="dates-note">Dates can vary by year. Verify at irs.gov.</p>
-        </div>
+    <section>
+      <div class="section-card">
+        <h2>When This Calculator Is Useful</h2>
+        <p>This calculator is useful when you need a fast federal estimate of quarterly tax payments based on projected self-employment income for the year. It helps turn annual income and expense assumptions into a rough quarterly payment target so you can budget cash flow before each IRS estimated tax deadline.</p>
+        <ul>
+          <li>Estimating quarterly payments for freelance or contract income</li>
+          <li>Planning tax set-asides after income changes during the year</li>
+          <li>Checking whether your current quarterly payment estimate still makes sense</li>
+          <li>Budgeting for irregular income when there is no payroll withholding</li>
+        </ul>
+      </div>
+    </section>
 
-        <!-- Includes / Excludes -->
-        <div class="scope-box">
-          <div class="inc">
-            <h4>Includes</h4>
-            <ul>
-              <li>2025 federal income tax brackets</li>
-              <li>Standard deduction</li>
-              <li>Self-employment (SE) tax</li>
-              <li>50% SE tax deduction</li>
-              <li>401(k) / IRA / HSA above-the-line deductions</li>
-            </ul>
-          </div>
-          <div class="exc">
-            <h4>Excludes</h4>
-            <ul>
-              <li>State taxes</li>
-              <li>Tax credits of any kind</li>
-              <li>Itemized deductions</li>
-              <li>Alternative Minimum Tax (AMT)</li>
-              <li>Additional Medicare Tax (0.9%)</li>
-              <li>Special situations / phase-outs</li>
-            </ul>
-          </div>
-        </div>
+    <section>
+      <div class="section-card">
+        <h2>What This Calculator Does</h2>
+        <p>This calculator estimates federal quarterly tax payments for self-employment income. It starts with projected annual income and business expenses, estimates annual profit, approximates self-employment tax, estimates federal income tax using a standard deduction by filing status, and divides the estimated annual total into four equal quarterly payments.</p>
+        <p>It is intended for fast planning and budgeting. It is not a substitute for tax preparation software, accountant advice, or an IRS safe-harbor review.</p>
+      </div>
+    </section>
 
-        <section class="info-section">
-          <h2>What This Calculator Does</h2>
-          <p>This calculator estimates your 2025 US federal quarterly tax payments using your net self-employment profit, filing status, optional W-2 wages, expected federal withholding, and optional above-the-line retirement and HSA deductions. It combines estimated federal income tax with self-employment tax, subtracts expected withholding, and divides the remaining estimated amount due into four equal quarterly payments.</p>
-        </section>
+    <section>
+      <div class="section-card">
+        <h2>Example Calculation</h2>
+        <table class="example-table">
+          <tr><th>Input</th><th>Example</th></tr>
+          <tr><td>Annual self-employment income</td><td>$80,000</td></tr>
+          <tr><td>Annual business expenses</td><td>$20,000</td></tr>
+          <tr><td>Projected annual profit</td><td>$60,000</td></tr>
+          <tr><td>Estimated self-employment tax</td><td>Approx. 15.3% of profit</td></tr>
+          <tr><td>Estimated federal taxable income</td><td>Profit minus half of self-employment tax minus standard deduction</td></tr>
+          <tr><td>Output</td><td>Estimated annual tax and equal quarterly payment</td></tr>
+        </table>
+      </div>
+    </section>
 
-        <section class="info-section">
-          <h2>Calculation Methodology</h2>
-          <p>The calculator first estimates self-employment tax by multiplying net profit by 0.9235 to get the SE tax base, then applying 12.4% Social Security tax up to the annual wage base and 2.9% Medicare tax on the remaining SE base. It then calculates the deductible half of SE tax, subtracts that deduction along with optional retirement and HSA contributions from total income to estimate adjusted gross income, applies the standard deduction for the selected filing status, estimates 2025 federal income tax from the remaining taxable income using federal brackets, adds income tax and SE tax together, subtracts expected federal withholding, and divides the remaining estimated amount due by four to show equal quarterly payment estimates.</p>
-        </section>
+    <section>
+      <div class="section-card">
+        <h2>Formula</h2>
+        <p><strong>Projected Profit</strong> = Annual Income − Annual Expenses</p>
+        <p><strong>Estimated Self-Employment Tax</strong> = Projected Profit × 15.3%</p>
+        <p><strong>Taxable Income Estimate</strong> = Projected Profit − 50% of self-employment tax − standard deduction</p>
+        <p><strong>Estimated Annual Tax</strong> = Estimated Self-Employment Tax + Estimated Federal Income Tax</p>
+        <p><strong>Estimated Quarterly Payment</strong> = Estimated Annual Tax ÷ 4</p>
+      </div>
+    </section>
 
-        <!-- Disclaimer -->
-        <p class="disclaimer">Estimates only. This tool does not constitute tax advice. Verify all figures with official IRS sources or a qualified tax professional before making payments.</p>
+    <section>
+      <div class="section-card">
+        <h2>Calculation Methodology</h2>
+        <p>This calculator uses a simplified federal estimate flow. First, it calculates projected annual profit from self-employment income minus business expenses. Next, it estimates self-employment tax at 15.3% of profit. Then it reduces profit by half of the self-employment tax and by the standard deduction tied to the selected filing status to estimate taxable income. Federal income tax is then approximated with progressive tax brackets. Finally, estimated annual tax is divided into four equal quarterly payments.</p>
+        <p>All calculations run locally in the browser and no personal data is stored. This methodology is intentionally simplified for quick planning.</p>
+      </div>
+    </section>
 
-        <!-- BOTTOM AD SLOT (collapsed by default) -->
-        <div id="ad-slot-bottom" class="ad-slot ad-slot-bottom is-off" aria-hidden="true"></div>
+    <section>
+      <div class="section-card">
+        <h2>Example Scenarios</h2>
+        <p><strong>Scenario 1:</strong> A freelancer expects $90,000 of annual self-employment income and $20,000 of business expenses. The tool estimates projected profit, applies a simplified self-employment tax estimate, then shows a quarterly payment target that can be used for budgeting.</p>
+        <p><strong>Scenario 2:</strong> A contractor started the year expecting $50,000 of income but later projects $75,000. Running the calculator again with the updated annual estimate shows whether quarterly set-asides likely need to increase.</p>
+        <p><strong>Scenario 3:</strong> A side-business owner compares different expense assumptions to see how changes in projected annual profit affect the quarterly payment estimate.</p>
+      </div>
+    </section>
 
-      </section><!-- /#results -->
+    <section>
+      <div class="section-card">
+        <h2>Understanding Quarterly Estimated Taxes</h2>
+        <p>Quarterly estimated taxes exist because many self-employed people do not have federal tax withheld from each payment they receive. Instead of waiting until the end of the year to pay the entire amount, the IRS generally expects tax to be paid during the year in installments. These installments are usually discussed as quarterly estimated payments, even though the exact due dates are set by the IRS and are not evenly spaced by calendar months.</p>
+        <p>The purpose of a quarterly tax calculator is not to produce a final tax return. It is to provide a planning estimate using expected annual figures. That means the quality of the estimate depends on how realistic your annual income and expense assumptions are. If your income rises, falls, or becomes more seasonal during the year, the quarterly payment estimate should be reviewed again.</p>
+        <p>Self-employment income can create two separate federal tax layers: income tax and self-employment tax. Income tax depends on taxable income after deductions. Self-employment tax is tied to business profit and covers Social Security and Medicare obligations for self-employed workers. A simplified calculator combines both into a planning estimate so users can decide how much to reserve for tax.</p>
+        <p>This type of calculator is most helpful for budgeting, not filing. It does not replace a full tax projection, safe-harbor review, or professional advice. It gives a practical estimate that can help reduce surprises when quarterly deadlines arrive.</p>
+      </div>
+    </section>
 
-    </div><!-- /.container -->
+    <section>
+      <div class="section-card">
+        <h2>Common Scenarios</h2>
+        <ul>
+          <li>Freelancers setting aside money after each client payment</li>
+          <li>Independent contractors estimating quarterly payments for the first time</li>
+          <li>Small business owners updating tax budgets after revenue changes</li>
+          <li>Side-income earners checking whether a rough quarterly estimate looks reasonable</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-card">
+        <h2>FAQ</h2>
+        <table class="faq-table">
+          <tr><th>Question</th><th>Answer</th></tr>
+          <tr><td>Does this include state tax?</td><td>No. This version estimates federal tax only.</td></tr>
+          <tr><td>Is this IRS-accurate?</td><td>No. It is a planning estimate and not tax advice.</td></tr>
+          <tr><td>Can I use quarterly income instead of annual income?</td><td>This version expects annual income and annual expenses, not quarter-only inputs.</td></tr>
+          <tr><td>Why can actual payments differ?</td><td>Actual payments can differ because of credits, withholding, filing specifics, state rules, and safe-harbor planning.</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-card">
+        <h2>Related Calculators</h2>
+        <p>Use the footer below to move to related live tools in the network.</p>
+      </div>
+    </section>
   </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>QuarterlyTaxCalc</h4>
-          <p>Free federal quarterly tax estimator for 1099 / self-employed workers. 2025 brackets. No data collected.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Pages</h4>
-          <a href="/faq.html">FAQ</a>
-          <a href="/privacy.html">Privacy Policy</a>
-          <a href="/legal.html">Legal</a>
-          <a href="/contact.html">Contact</a>
-        </div>
-        <div class="footer-col">
-          <h4>Related Tools</h4>
-          <div class="network-links related-tools"></div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© <span id="year"></span> QuarterlyTaxCalc.com — For informational use only.</span>
-        <span>Partnerships: <a href="mailto:partnerships@calc-hq.com" class="partnerships-link">partnerships@calc-hq.com</a></span>
-      </div>
-    </div>
+<footer class="site-footer">
+    <div class="container" id="site-footer"></div>
   </footer>
-
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-  <script src="config.js"></script>
-  <script src="network.js"></script>
-  <script src="app.js"></script>
-  <script src="ads.js"></script>
+  <script src="/assets/config.js"></script>
+  <script src="/assets/network.js"></script>
+  <script src="/assets/footer.js"></script>
+  <script src="/assets/ads.js"></script>
+  <script src="/assets/app.js"></script>
 </body>
 </html>

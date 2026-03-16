@@ -23,6 +23,12 @@
 /network.js
   Cache-Control: public, max-age=604800, immutable
 
+/assets/*.js
+  Cache-Control: public, max-age=604800, immutable
+
+/assets/*.svg
+  Cache-Control: public, max-age=604800, immutable
+
 /ads.txt
   Cache-Control: public, max-age=86400
 
