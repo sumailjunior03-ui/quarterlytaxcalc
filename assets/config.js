@@ -7,7 +7,7 @@ window.SITE_CONFIG = {
   taxYearLabel: '2025 tax-year estimate',
   adsensePublisherId: 'ca-pub-7744853829365165',
   federalTaxData: {
-    standardDeduction: { single: 15000, married: 30000, hoh: 22500 },
+    standardDeduction: { single: 15750, married: 31500, hoh: 25000 },
     brackets: {
       single: [
         { upTo: 11925, rate: 0.10 }, { upTo: 48475, rate: 0.12 }, { upTo: 103350, rate: 0.22 },

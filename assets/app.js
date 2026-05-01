@@ -35,7 +35,11 @@
     const expenses = Math.max(0, safeNumber(document.getElementById('annualExpenses').value));
     const filingStatus = document.getElementById('filingStatus').value;
     const profit = Math.max(0, income - expenses);
-    const seTax = profit * 0.153;
+    const seBase = profit * 0.9235;
+    const ssWageBase = 176100;
+    const seSS = Math.min(seBase, ssWageBase) * 0.124;
+    const seMedicare = seBase * 0.029;
+    const seTax = seSS + seMedicare;
     const adjustedIncome = Math.max(0, profit - (seTax / 2));
     const deduction = window.SITE_CONFIG.federalTaxData.standardDeduction[filingStatus] || 0;
     const taxableIncome = Math.max(0, adjustedIncome - deduction);

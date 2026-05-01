@@ -17,7 +17,7 @@ body {
   color: var(--text);
   line-height: 1.5;
 }
-.container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+.container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
 .site-header, .site-footer { background: var(--panel); border-bottom: 1px solid var(--border); }
 .site-footer { border-top: 1px solid var(--border); border-bottom: 0; margin-top: 40px; }
 .header-inner { min-height: 68px; display: flex; align-items: center; justify-content: space-between; }
@@ -35,7 +35,7 @@ main { padding: 24px 0 40px; }
 .breadcrumbs, .muted, .notice { color: var(--muted); }
 .ad-slot {
   margin-top: 16px;
-  min-height: 90px;
+  min-height: 0;
   border: 1px dashed var(--border);
   border-radius: 12px;
   display: flex;
@@ -96,3 +96,15 @@ button:hover { background: var(--primary-dark); }
 .header-nav { display: flex; gap: 16px; flex-wrap: wrap; }
 .header-nav a { color: var(--primary); text-decoration: none; font-size: 0.95rem; }
 .header-nav a.active { font-weight: 700; color: var(--primary-dark); }
+.adsense-unit { height: 0; overflow: hidden; }
+.adsense-unit ins, .adsense-unit iframe { height: 0 !important; max-height: 0 !important; }
+.adsense-unit.active { height: auto; overflow: visible; }
+.adsense-unit.active ins, .adsense-unit.active iframe { height: auto !important; max-height: none !important; }
+.page-copy { max-width: 800px; margin: 0 auto; }
+.page-copy h1 { margin-bottom: 16px; }
+.page-copy h2 { margin-top: 24px; margin-bottom: 8px; }
+.page-copy p { margin-bottom: 12px; }
+@media (max-width: 600px) {
+  .page-copy { padding: 0 8px; }
+  body { padding-bottom: env(safe-area-inset-bottom, 0); }
+}

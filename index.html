@@ -14,7 +14,7 @@
   <meta name="google-adsense-account" content="ca-pub-7744853829365165">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7744853829365165" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=layout-repair-0430">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -87,78 +87,96 @@
       </div>
     </section>
 
+    <section>
+      <div class="section-card">
+        <h2>What This Calculator Gives You</h2>
+        <p>If you earn self-employment income — freelance work, 1099 contracts, consulting, or a side business — you probably owe quarterly estimated taxes. This calculator turns your projected annual income and expenses into a quarterly payment estimate so you know roughly how much to set aside before each IRS deadline.</p>
+        <p>The four deadlines for 2025 are April 15, June 15, September 15, and January 15, 2026. Miss one and you could face underpayment penalties — even if you're due a refund at year-end (IRS Publication 505).</p>
+        <p>This is a federal-only estimate. It doesn't include state taxes, penalty calculations, safe-harbor strategies, or prior-year withholding offsets.</p>
+      </div>
+    </section>
 
     <section>
       <div class="section-card">
-        <h2>When This Calculator Is Useful</h2>
-        <p>This calculator is useful when you need a fast federal estimate of quarterly tax payments based on projected self-employment income for the year. It helps turn annual income and expense assumptions into a rough quarterly payment target so you can budget cash flow before each IRS estimated tax deadline.</p>
+        <h2>How the Estimate Works</h2>
+        <p>Enter your expected annual income and business expenses, and the calculator runs a simplified federal tax projection:</p>
+        <ol>
+          <li><strong>Projected profit</strong> = income minus expenses</li>
+          <li><strong>SE tax base</strong> = 92.35% of projected profit (IRC §1402(a)(12))</li>
+          <li><strong>Self-employment tax</strong> = Social Security + Medicare
+            <ul>
+              <li>Social Security: 12.4% of the SE tax base, capped at $176,100</li>
+              <li>Medicare: 2.9% of the SE tax base, no cap</li>
+            </ul>
+          </li>
+          <li><strong>Adjusted income</strong> = profit minus half of SE tax (IRC §164(f))</li>
+          <li><strong>Taxable income</strong> = adjusted income minus standard deduction</li>
+          <li><strong>Federal income tax</strong> = progressive brackets on taxable income</li>
+          <li><strong>Quarterly payment</strong> = total estimated tax ÷ 4</li>
+        </ol>
+        <p>The result is a single flat quarterly estimate. The IRS doesn't require equal payments — you can use the annualized income method (Form 2210, Schedule AI) to pay more in high-earning quarters and less in low ones. But this tool uses the equal-payment approach for simplicity (Form 1040-ES, Regular Method).</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-card">
+        <h2>Example: $80,000 Income, $20,000 Expenses</h2>
+        <p><strong>Inputs:</strong> $80,000 self-employment income, $20,000 business expenses, single filer</p>
+        <table class="example-table">
+          <tr><th>Step</th><th>Calculation</th><th>Amount</th></tr>
+          <tr><td>Projected profit</td><td>$80,000 − $20,000</td><td>$60,000</td></tr>
+          <tr><td>SE tax base (92.35%)</td><td>$60,000 × 92.35%</td><td>$55,410</td></tr>
+          <tr><td>Social Security tax (12.4%)</td><td>$55,410 × 12.4%</td><td>$6,871</td></tr>
+          <tr><td>Medicare tax (2.9%)</td><td>$55,410 × 2.9%</td><td>$1,607</td></tr>
+          <tr><td>Total self-employment tax</td><td>$6,871 + $1,607</td><td>$8,478</td></tr>
+          <tr><td>50% SE deduction</td><td>$8,478 ÷ 2</td><td>−$4,239</td></tr>
+          <tr><td>Adjusted income</td><td>$60,000 − $4,239</td><td>$55,761</td></tr>
+          <tr><td>Standard deduction (single, 2025)</td><td></td><td>−$15,750</td></tr>
+          <tr><td>Taxable income</td><td>$55,761 − $15,750</td><td>$40,011</td></tr>
+          <tr><td>Federal income tax</td><td>Progressive brackets</td><td>$4,563</td></tr>
+          <tr><td><strong>Total estimated tax</strong></td><td>$8,478 + $4,563</td><td><strong>$13,041</strong></td></tr>
+          <tr><td><strong>Quarterly payment</strong></td><td>$13,041 ÷ 4</td><td><strong>$3,260</strong></td></tr>
+        </table>
+        <p>Due dates: April 15, June 15, September 15, January 15.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-card">
+        <h2>Calculation Path</h2>
+        <p>The calculation follows a simplified version of the Form 1040-ES estimated tax worksheet.</p>
+        <p><strong>Income projection:</strong> Annual self-employment income minus annual business expenses equals projected profit.</p>
+        <p><strong>Self-employment tax:</strong> The SE tax base is 92.35% of projected profit (IRC §1402(a)(12)). This adjustment roughly accounts for the employer-half deduction that W-2 employees don't pay. Social Security tax is 12.4% of that base, capped at $176,100 for 2025. Medicare tax is 2.9% of the base with no cap. Combined, the rate is 15.3% applied to the adjusted base rather than full profit (IRC §1401).</p>
+        <p><strong>Income tax adjustment:</strong> Half of SE tax is deducted from profit before calculating income tax (IRC §164(f)). Adjusted income = profit − (SE tax ÷ 2).</p>
+        <p><strong>Taxable income:</strong> Adjusted income minus the standard deduction. For 2025: $15,750 (single), $31,500 (married filing jointly), $25,000 (head of household).</p>
+        <p><strong>Federal income tax:</strong> Progressive brackets applied to taxable income using 2025 rate thresholds for the selected filing status.</p>
+        <p><strong>Quarterly division:</strong> Total estimated tax ÷ 4. Equal payments only. The annualized income method (Form 2210, Schedule AI) allows variable payments based on actual income each quarter, but this tool doesn't model that.</p>
+        <p><strong>Assumptions:</strong></p>
         <ul>
-          <li>Estimating quarterly payments for freelance or contract income</li>
-          <li>Planning tax set-asides after income changes during the year</li>
-          <li>Checking whether your current quarterly payment estimate still makes sense</li>
-          <li>Budgeting for irregular income when there is no payroll withholding</li>
+          <li>Income and expenses are projected for the full year, not entered per quarter</li>
+          <li>All four payments are equal</li>
+          <li>No tax credits applied</li>
+          <li>No prior withholding or estimated payments subtracted</li>
+          <li>No state or local tax included</li>
+          <li>You expect to owe at least $1,000 in tax for the year (the IRS threshold that triggers the quarterly payment requirement, per IRC §6654)</li>
         </ul>
       </div>
     </section>
 
     <section>
       <div class="section-card">
-        <h2>What This Calculator Does</h2>
-        <p>This calculator estimates federal quarterly tax payments for self-employment income. It starts with projected annual income and business expenses, estimates annual profit, approximates self-employment tax, estimates federal income tax using a standard deduction by filing status, and divides the estimated annual total into four equal quarterly payments.</p>
-        <p>It is intended for fast planning and budgeting. It is not a substitute for tax preparation software, accountant advice, or an IRS safe-harbor review.</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-card">
-        <h2>Example Calculation</h2>
-        <table class="example-table">
-          <tr><th>Input</th><th>Example</th></tr>
-          <tr><td>Annual self-employment income</td><td>$80,000</td></tr>
-          <tr><td>Annual business expenses</td><td>$20,000</td></tr>
-          <tr><td>Projected annual profit</td><td>$60,000</td></tr>
-          <tr><td>Estimated self-employment tax</td><td>Approx. 15.3% of profit</td></tr>
-          <tr><td>Estimated federal taxable income</td><td>Profit minus half of self-employment tax minus standard deduction</td></tr>
-          <tr><td>Output</td><td>Estimated annual tax and equal quarterly payment</td></tr>
-        </table>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-card">
-        <h2>Formula</h2>
-        <p><strong>Projected Profit</strong> = Annual Income − Annual Expenses</p>
-        <p><strong>Estimated Self-Employment Tax</strong> = Projected Profit × 15.3%</p>
-        <p><strong>Taxable Income Estimate</strong> = Projected Profit − 50% of self-employment tax − standard deduction</p>
-        <p><strong>Estimated Annual Tax</strong> = Estimated Self-Employment Tax + Estimated Federal Income Tax</p>
-        <p><strong>Estimated Quarterly Payment</strong> = Estimated Annual Tax ÷ 4</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-card">
-        <h2>Calculation Methodology</h2>
-        <p>This calculator uses a simplified federal estimate flow. First, it calculates projected annual profit from self-employment income minus business expenses. Next, it estimates self-employment tax at 15.3% of profit. Then it reduces profit by half of the self-employment tax and by the standard deduction tied to the selected filing status to estimate taxable income. Federal income tax is then approximated with progressive tax brackets. Finally, estimated annual tax is divided into four equal quarterly payments.</p>
-        <p>All calculations run locally in the browser and no personal data is stored. This methodology is intentionally simplified for quick planning.</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-card">
-        <h2>Example Scenarios</h2>
-        <p><strong>Scenario 1:</strong> A freelancer expects $90,000 of annual self-employment income and $20,000 of business expenses. The tool estimates projected profit, applies a simplified self-employment tax estimate, then shows a quarterly payment target that can be used for budgeting.</p>
-        <p><strong>Scenario 2:</strong> A contractor started the year expecting $50,000 of income but later projects $75,000. Running the calculator again with the updated annual estimate shows whether quarterly set-asides likely need to increase.</p>
-        <p><strong>Scenario 3:</strong> A side-business owner compares different expense assumptions to see how changes in projected annual profit affect the quarterly payment estimate.</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-card">
         <h2>Understanding Quarterly Estimated Taxes</h2>
-        <p>Quarterly estimated taxes exist because many self-employed people do not have federal tax withheld from each payment they receive. Instead of waiting until the end of the year to pay the entire amount, the IRS generally expects tax to be paid during the year in installments. These installments are usually discussed as quarterly estimated payments, even though the exact due dates are set by the IRS and are not evenly spaced by calendar months.</p>
-        <p>The purpose of a quarterly tax calculator is not to produce a final tax return. It is to provide a planning estimate using expected annual figures. That means the quality of the estimate depends on how realistic your annual income and expense assumptions are. If your income rises, falls, or becomes more seasonal during the year, the quarterly payment estimate should be reviewed again.</p>
-        <p>Self-employment income can create two separate federal tax layers: income tax and self-employment tax. Income tax depends on taxable income after deductions. Self-employment tax is tied to business profit and covers Social Security and Medicare obligations for self-employed workers. A simplified calculator combines both into a planning estimate so users can decide how much to reserve for tax.</p>
-        <p>This type of calculator is most helpful for budgeting, not filing. It does not replace a full tax projection, safe-harbor review, or professional advice. It gives a practical estimate that can help reduce surprises when quarterly deadlines arrive.</p>
+        <p>Self-employed people don't have an employer withholding federal tax from each paycheck. Instead, the IRS expects tax to be paid during the year in installments.</p>
+        <p><strong>2025 due dates:</strong></p>
+        <table class="example-table">
+          <tr><th>Period</th><th>Due date</th></tr>
+          <tr><td>January 1 – March 31</td><td>April 15</td></tr>
+          <tr><td>April 1 – May 31</td><td>June 15</td></tr>
+          <tr><td>June 1 – August 31</td><td>September 15</td></tr>
+          <tr><td>September 1 – December 31</td><td>January 15, 2026</td></tr>
+        </table>
+        <p>If a due date falls on a weekend or federal holiday, the deadline moves to the next business day.</p>
+        <p>Self-employment income creates two federal tax layers: income tax (based on taxable income after deductions) and self-employment tax (based on net earnings, covering Social Security and Medicare). This calculator combines both into a single quarterly estimate — a budgeting number, not a filing tool. If your income changes during the year, recalculate. The IRS doesn't penalize you for making up shortfalls in later quarters if you reach the safe-harbor threshold by year-end.</p>
       </div>
     </section>
 
@@ -166,10 +184,10 @@
       <div class="section-card">
         <h2>Common Scenarios</h2>
         <ul>
-          <li>Freelancers setting aside money after each client payment</li>
-          <li>Independent contractors estimating quarterly payments for the first time</li>
-          <li>Small business owners updating tax budgets after revenue changes</li>
-          <li>Side-income earners checking whether a rough quarterly estimate looks reasonable</li>
+          <li><strong>Freelancer setting aside tax after each client payment.</strong> You just got paid $5,000 for a project. If your annual profit projects to $60,000 and your quarterly estimate is ~$3,260, you know roughly how much of that payment should go to your tax reserve before the next deadline.</li>
+          <li><strong>Contractor whose income jumped mid-year.</strong> You projected $50,000 in January but now expect $80,000 by June. Run the calculator again with the updated estimate to see if Q3 and Q4 payments need to increase.</li>
+          <li><strong>First-time 1099 worker figuring out quarterly payments.</strong> The rule: if you expect to owe at least $1,000 in federal tax and have no withholding covering it, you generally need to make quarterly payments. This gives you a starting number.</li>
+          <li><strong>Side-business owner comparing expense assumptions.</strong> Run the calculator with and without a $5,000 equipment purchase to see how it changes the quarterly estimate — but this tool doesn't determine whether a specific expense is deductible under IRS rules.</li>
         </ul>
       </div>
     </section>
@@ -177,20 +195,51 @@
     <section>
       <div class="section-card">
         <h2>FAQ</h2>
-        <table class="faq-table">
-          <tr><th>Question</th><th>Answer</th></tr>
-          <tr><td>Does this include state tax?</td><td>No. This version estimates federal tax only.</td></tr>
-          <tr><td>Is this IRS-accurate?</td><td>No. It is a planning estimate and not tax advice.</td></tr>
-          <tr><td>Can I use quarterly income instead of annual income?</td><td>This version expects annual income and annual expenses, not quarter-only inputs.</td></tr>
-          <tr><td>Why can actual payments differ?</td><td>Actual payments can differ because of credits, withholding, filing specifics, state rules, and safe-harbor planning.</td></tr>
-        </table>
+        <h3>Does this include state tax?</h3>
+        <p>No. Federal only. If you live in a state with income tax, your actual quarterly payments will be higher. California, New York, and other states have their own estimated tax requirements and due dates.</p>
+        <h3>When are quarterly payments due?</h3>
+        <p>April 15, June 15, September 15, and January 15 of the following year. Weekend or holiday deadlines move to the next business day (IRS Publication 505).</p>
+        <h3>Why might my actual payment differ from this estimate?</h3>
+        <p>Credits not modeled here, W-2 withholding that offsets the quarterly requirement, safe-harbor strategies based on prior-year tax, and the annualized income method for uneven earnings.</p>
+        <h3>Does this use the IRS 92.35% self-employment tax adjustment?</h3>
+        <p>Yes. SE tax is calculated on 92.35% of net earnings, not the full profit amount. This matches the IRS formula under IRC §1402(a)(12).</p>
+        <h3>Does this account for the Social Security wage base cap?</h3>
+        <p>Yes. The 12.4% Social Security portion stops at $176,100 in net earnings for 2025. Only the 2.9% Medicare portion applies above that.</p>
+        <h3>Can I use quarterly income instead of annual?</h3>
+        <p>Enter your best estimate of what the full year will total. If your income is uneven, recalculate when your projection changes.</p>
+        <h3>What is the safe-harbor rule?</h3>
+        <p>Pay at least 100% of your prior-year tax liability (110% if your AGI was over $150,000) and the IRS generally won't charge an underpayment penalty — even if your actual tax turns out higher. This tool doesn't evaluate safe-harbor status.</p>
       </div>
     </section>
 
     <section>
       <div class="section-card">
-        <h2>Related Calculators</h2>
-        <p>Use the footer below to move to related live tools in the network.</p>
+        <h2>Data Sources</h2>
+        <ul>
+          <li><strong>Federal income tax brackets:</strong> IRS Revenue Procedure, 2025 tax year</li>
+          <li><strong>Standard deduction:</strong> $15,750 / $31,500 / $25,000 — IRS, 2025</li>
+          <li><strong>Self-employment tax rate:</strong> IRC §1401 — 15.3% (12.4% Social Security + 2.9% Medicare)</li>
+          <li><strong>92.35% SE adjustment:</strong> IRC §1402(a)(12)</li>
+          <li><strong>50% SE tax deduction:</strong> IRC §164(f)</li>
+          <li><strong>Social Security wage base:</strong> $176,100 (2025) — SSA</li>
+          <li><strong>Quarterly payment structure and due dates:</strong> Form 1040-ES, IRS Publication 505</li>
+          <li><strong>Safe harbor thresholds:</strong> IRC §6654(d)(1) — 90% of current year tax or 100% of prior year tax (110% if AGI exceeded $150,000)</li>
+        </ul>
+        <p>These are 2025 federal values and may change after tax law or inflation adjustments.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-card">
+        <h2>Limitations</h2>
+        <p><strong>No state or local taxes.</strong> Federal only. State income tax can add 5–13% on top — a significant gap for planning.</p>
+        <p><strong>No penalty calculations.</strong> This tool doesn't calculate underpayment penalties (Form 2210). Miss a deadline or underpay, and the IRS charges interest on the shortfall.</p>
+        <p><strong>No tax credits.</strong> Child Tax Credit, Earned Income Credit, education credits, and others that reduce your actual bill are not modeled.</p>
+        <p><strong>No withholding offset.</strong> If you also have W-2 income with federal withholding, that withholding reduces your required quarterly payments. Not accounted for here.</p>
+        <p><strong>No safe-harbor planning.</strong> The safe-harbor rule (pay 100% of prior-year tax, or 110% if AGI was over $150,000) can protect you from penalties even if estimates are wrong. Not evaluated here.</p>
+        <p><strong>Equal quarterly payments only.</strong> Annual tax ÷ 4. The IRS allows the annualized income method (Form 2210 Schedule AI) for variable income quarters.</p>
+        <p><strong>No QBI deduction.</strong> The Qualified Business Income deduction (Section 199A) can reduce taxable income by up to 20% of qualified business income. Not modeled.</p>
+        <p><strong>Not tax advice.</strong> This is a planning estimate. Consult a tax professional or use IRS Form 1040-ES directly for filing decisions.</p>
       </div>
     </section>
   </main>
@@ -199,7 +248,6 @@
   </footer>
   <script src="/assets/config.js"></script>
   <script src="/assets/network.js"></script>
-  <script src="/assets/footer.js"></script>
   <script src="/assets/ads.js"></script>
   <script src="/assets/app.js"></script>
 </body>
