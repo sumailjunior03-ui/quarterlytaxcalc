@@ -16,7 +16,7 @@
     { name: "BonusTaxCalc.com",            url: "https://bonustaxcalc.com",         live: true,  clusters: ["us", "tax-income"] },
     { name: "SalaryVsInflation.com",       url: "https://salaryvsinflation.com",    live: true,  clusters: ["us", "income"] },
     { name: "Hourly2SalaryCalc.com",       url: "https://hourly2salarycalc.com",    live: true,  clusters: ["us", "income"] },
-    { name: "TotalCompCalc.com",           url: "https://totalcompcalc.com",        live: true,  clusters: ["us", "compensation"] },
+    { name: "TotalCompCalc.com",           url: "https://totalcompcalc.com",        live: false,  clusters: ["us", "compensation"] },
     { name: "OvertimePayCalc.com",         url: "https://overtimepaycalc.com",      live: true,  clusters: ["us", "compensation"] },
     { name: "AfterTaxSalaryCalc.com",      url: "https://aftertaxsalarycalc.com",   live: true,  clusters: ["us", "tax-income"] },
     { name: "OntarioTakeHomeCalc.com",     url: "https://ontariotakehomecalc.com",  live: true,  clusters: ["ca", "take-home"] },
