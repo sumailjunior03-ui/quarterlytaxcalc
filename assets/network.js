@@ -7,17 +7,18 @@
 
   window.CALC_HQ_NETWORK = [
     { name: "Calc-HQ",                     url: "https://calc-hq.com",              live: true,  clusters: [] },
-    { name: "BizDayChecker.com",           url: "https://bizdaychecker.com",        live: true,  clusters: ["us", "payroll-timing"] },
-    { name: "BankCutoffChecker.com",       url: "https://bankcutoffchecker.com",    live: true,  clusters: ["us", "payroll-timing"] },
-    { name: "PayrollDateChecker.com",      url: "https://payrolldatechecker.com",   live: true,  clusters: ["us", "payroll-timing"] },
+    { name: "BizDayChecker.com",           url: "https://bizdaychecker.com",        live: true,  clusters: ["us", "payroll"] },
+    { name: "BankCutoffChecker.com",       url: "https://bankcutoffchecker.com",    live: true,  clusters: ["us", "payroll"] },
+    { name: "PayrollDateChecker.com",      url: "https://payrolldatechecker.com",   live: true,  clusters: ["us", "payroll"] },
     { name: "1099vsW2Calc.com",            url: "https://1099vsw2calc.com",         live: true,  clusters: ["us", "tax-income"] },
-    { name: "FreelanceIncomeCalc.com",     url: "https://freelanceincomecalc.com",  live: true,  clusters: ["us", "tax-income"] },
+    { name: "FreelanceIncomeCalc.com",     url: "https://freelanceincomecalc.com",  live: true,  clusters: ["us", "income"] },
     { name: "QuarterlyTaxCalc.com",        url: "https://quarterlytaxcalc.com",     live: true,  clusters: ["us", "tax-income"] },
-    { name: "SalaryVsInflation.com",       url: "https://salaryvsinflation.com",    live: true,  clusters: ["us", "compensation"] },
-    { name: "Hourly2SalaryCalc.com",       url: "https://hourly2salarycalc.com",    live: true,  clusters: ["us", "compensation"] },
+    { name: "BonusTaxCalc.com",            url: "https://bonustaxcalc.com",         live: true,  clusters: ["us", "tax-income"] },
+    { name: "SalaryVsInflation.com",       url: "https://salaryvsinflation.com",    live: true,  clusters: ["us", "income"] },
+    { name: "Hourly2SalaryCalc.com",       url: "https://hourly2salarycalc.com",    live: true,  clusters: ["us", "income"] },
     { name: "TotalCompCalc.com",           url: "https://totalcompcalc.com",        live: true,  clusters: ["us", "compensation"] },
     { name: "OvertimePayCalc.com",         url: "https://overtimepaycalc.com",      live: true,  clusters: ["us", "compensation"] },
-    { name: "AfterTaxSalaryCalc.com",      url: "https://aftertaxsalarycalc.com",   live: true,  clusters: ["us", "compensation"] },
+    { name: "AfterTaxSalaryCalc.com",      url: "https://aftertaxsalarycalc.com",   live: true,  clusters: ["us", "tax-income"] },
     { name: "OntarioTakeHomeCalc.com",     url: "https://ontariotakehomecalc.com",  live: true,  clusters: ["ca", "take-home"] },
     { name: "CPPCalc.com",                 url: "https://cppcalc.com",              live: true,  clusters: ["ca", "payroll-deductions"] },
     { name: "EICalc.com",                  url: "https://eicalc.com",               live: true,  clusters: ["ca", "payroll-deductions"] }
@@ -43,9 +44,8 @@
   }
 
   function renderRelatedTools() {
-    var containers = document.querySelectorAll("#relatedTools, .network-links");
+    var containers = document.querySelectorAll("#related-calculators");
     if (!containers.length) return;
-
     var currentSite = getCurrentSite();
     var currentDomain = getCurrentDomain();
     var currentClusters = currentSite ? currentSite.clusters : [];
@@ -150,16 +150,13 @@
       }).join('') + '</ul>';
     }
 
-    var partnershipsEmail = (window.SITE_CONFIG && window.SITE_CONFIG.partnershipsEmail) ? window.SITE_CONFIG.partnershipsEmail : 'partnerships@calc-hq.com';
-    var siteName = (window.SITE_CONFIG && window.SITE_CONFIG.siteName) ? window.SITE_CONFIG.siteName : 'QuarterlyTaxCalc.com';
-
     footerTarget.innerHTML = [
       '<div class="footer-grid">',
         '<div><h2>Site links</h2><ul class="footer-nav-links"><li><a href="/">Home</a></li><li><a href="/about.html">About</a></li><li><a href="/privacy.html">Privacy Policy</a></li><li><a href="/legal.html">Legal</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/contact.html">Contact</a></li></ul></div>',
         '<div><h2>Related tools</h2>', relatedHtml, '</div>',
-        '<div><h2>Resources</h2><p><a href="https://calc-hq.com/" target="_blank" rel="noopener">Financial Calculator Hub</a></p><h2>Contact</h2><p><a href="mailto:' + partnershipsEmail + '">' + partnershipsEmail + '</a></p></div>',
+        '<div><h2>Resources</h2><p><a href="https://calc-hq.com/" target="_blank" rel="noopener">Financial Calculator Hub</a></p><h2>Contact</h2><p><a href="mailto:partnerships@calc-hq.com">partnerships@calc-hq.com</a></p></div>',
       '</div>',
-      '<p class="footer-meta">' + siteName + ' · Estimates run locally in your browser.</p>'
+      '<p class="footer-meta">QuarterlyTaxCalc.com · Estimates run locally in your browser.</p>'
     ].join('');
   }
 
