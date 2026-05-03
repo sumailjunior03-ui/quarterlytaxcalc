@@ -3,25 +3,25 @@ window.SITE_CONFIG = {
   siteName: 'QuarterlyTaxCalc.com',
   title: 'Quarterly Tax Estimator',
   partnershipsEmail: 'partnerships@calc-hq.com',
-  buildDate: '2026-03-14',
-  taxYearLabel: '2025 tax-year estimate',
+  buildDate: '2026-05-03',
+  taxYearLabel: '2026 tax-year estimate',
   adsensePublisherId: 'ca-pub-7744853829365165',
   federalTaxData: {
-    standardDeduction: { single: 15750, married: 31500, hoh: 25000 },
+    standardDeduction: { single: 16100, married: 32200, hoh: 24150 },
     brackets: {
       single: [
-        { upTo: 11925, rate: 0.10 }, { upTo: 48475, rate: 0.12 }, { upTo: 103350, rate: 0.22 },
-        { upTo: 197300, rate: 0.24 }, { upTo: 250525, rate: 0.32 }, { upTo: 626350, rate: 0.35 },
+        { upTo: 12400, rate: 0.10 }, { upTo: 50400, rate: 0.12 }, { upTo: 105700, rate: 0.22 },
+        { upTo: 201775, rate: 0.24 }, { upTo: 256225, rate: 0.32 }, { upTo: 640600, rate: 0.35 },
         { upTo: null, rate: 0.37 }
       ],
       married: [
-        { upTo: 23850, rate: 0.10 }, { upTo: 96950, rate: 0.12 }, { upTo: 206700, rate: 0.22 },
-        { upTo: 394600, rate: 0.24 }, { upTo: 501050, rate: 0.32 }, { upTo: 751600, rate: 0.35 },
+        { upTo: 24800, rate: 0.10 }, { upTo: 100800, rate: 0.12 }, { upTo: 211400, rate: 0.22 },
+        { upTo: 403550, rate: 0.24 }, { upTo: 512450, rate: 0.32 }, { upTo: 768700, rate: 0.35 },
         { upTo: null, rate: 0.37 }
       ],
       hoh: [
-        { upTo: 17000, rate: 0.10 }, { upTo: 64850, rate: 0.12 }, { upTo: 103350, rate: 0.22 },
-        { upTo: 197300, rate: 0.24 }, { upTo: 250500, rate: 0.32 }, { upTo: 626350, rate: 0.35 },
+        { upTo: 17700, rate: 0.10 }, { upTo: 67450, rate: 0.12 }, { upTo: 105700, rate: 0.22 },
+        { upTo: 201775, rate: 0.24 }, { upTo: 256200, rate: 0.32 }, { upTo: 640600, rate: 0.35 },
         { upTo: null, rate: 0.37 }
       ]
     },
